@@ -27,13 +27,13 @@ def main():
     st.header('_:blue[Aplikasi Cluster Prediksi Asuransi]_')
     st.write("""
              Petunjuk Penggunaan,
-             1. Sistem dimulai dengan melakukan upload data
-             2. Cluster terbagi 2 bagian untuk ANALISIS dan PEMODELAN
-             - Analisis untuk menampilkan grafik pendapatan /tahun
-             - Pemodelan untuk menerapkan model K-Means Scikit-Learn
-             3. Timeseries untuk penerapan model REGRESI LINEAR
-             4. Hasil Prediksi /Payer dan Nama Payer diambil dari bagian Analisis Timeseries
-             5. Pastikan analisis dan pemodelan dalam keadaan default sebelum melihat hasil prediksi
+             Sistem dimulai dengan melakukan upload data
+             Cluster terbagi 2 bagian untuk ANALISIS dan PEMODELAN
+             Analisis untuk menampilkan grafik pendapatan /tahun
+             Pemodelan untuk menerapkan model K-Means Scikit-Learn
+             Timeseries untuk penerapan model REGRESI LINEAR
+             Hasil Prediksi /Payer dan Nama Payer diambil dari bagian Analisis Timeseries
+             Pastikan analisis dan pemodelan dalam keadaan default sebelum melihat hasil prediksi
              """)
     
     # Session handling
@@ -129,14 +129,14 @@ def main():
     if menu == "Abstrak" and menu1 == "Default" and menu2 == "Default":
         st.subheader("ABSTRAK")
         st.write("""
-                Prototipe Prediksi Pendapatan RS Berdasarkan Klasifikasi Payer Asuransi
+                 Prototipe Prediksi Pendapatan RS Berdasarkan Klasifikasi Payer Asuransi
                  """)
     
     # Riwayat Pembuat
     if menu == "Riwayat Pembuat" and menu1 == "Default" and menu2 == "Default":
         st.subheader("RIWAYAT PEMBUAT")
         st.write("""
-                Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat
+                 Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat
                  Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat
                  Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat
                  """)
