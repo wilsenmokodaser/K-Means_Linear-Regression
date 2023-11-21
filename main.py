@@ -26,14 +26,8 @@ def main():
     st.title(':blue[CUSTHEALTH]')
     st.header('_:blue[Aplikasi Cluster Prediksi Asuransi]_')
     st.write("""
-             Petunjuk Penggunaan,
-             Sistem dimulai dengan melakukan upload data
-             Cluster terbagi 2 bagian untuk ANALISIS dan PEMODELAN
-             Analisis untuk menampilkan grafik pendapatan /tahun
-             Pemodelan untuk menerapkan model K-Means Scikit-Learn
-             Timeseries untuk penerapan model REGRESI LINEAR
-             Hasil Prediksi /Payer dan Nama Payer diambil dari bagian Analisis Timeseries
-             Pastikan analisis dan pemodelan dalam keadaan default sebelum melihat hasil prediksi
+             Aplikasi ini digunakan untuk memprediksi cluster perusahaan asuransi,
+             kemudian melakukan regresi pendapatan rumah sakit dari perusahaan asuransi.
              """)
     
     # Session handling
@@ -129,14 +123,14 @@ def main():
     if menu == "Abstrak" and menu1 == "Default" and menu2 == "Default":
         st.subheader("ABSTRAK")
         st.write("""
-                 Prototipe Prediksi Pendapatan RS Berdasarkan Klasifikasi Payer Asuransi
+                Prototipe Prediksi Pendaptan Rumah Sakit Berdasarkan Klasifikasi Payer Asuransi
                  """)
     
     # Riwayat Pembuat
     if menu == "Riwayat Pembuat" and menu1 == "Default" and menu2 == "Default":
         st.subheader("RIWAYAT PEMBUAT")
         st.write("""
-                 Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat
+                Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat
                  Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat
                  Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat Riwayat Pembuat
                  """)
@@ -355,11 +349,16 @@ def main():
             st.session_state.num_lag, 
             st.session_state.opt_cat,
             st.session_state.year)
-        
+
+        tahun_prediksi = st.session_state.year + tahun_prediksi
+        hasil_prediksi = st.session_state.dff[st.session_state.select4][f"Revenue_{st.session_state.opt_cat}"].to_list() + hasil_prediksi
+
         df_r = pd.DataFrame({
-            "Hasil Prediksi": hasil_prediksi,
             "Tahun Prediksi": tahun_prediksi,
+            "Hasil Prediksi": hasil_prediksi
         })
+        # st.dataframe(st.session_state.dff[st.session_state.select4])
+        # st.dataframe(df_r)
 
         def convert_df(df):
             return df.to_csv(index=False).encode('utf-8')
@@ -369,7 +368,7 @@ def main():
         st.download_button(
             "Press to Download",
             csv,
-            "file.csv",
+            f"File - Perusahaan {st.session_state.select4} - Kategori {st.session_state.opt_cat} - {st.session_state.df_n['Cluster'][st.session_state.select4]}.csv",
             "text/csv",
             key='download-csv'
     )
