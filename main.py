@@ -26,8 +26,14 @@ def main():
     st.title(':blue[CUSTHEALTH]')
     st.header('_:blue[Aplikasi Cluster Prediksi Asuransi]_')
     st.write("""
-             Aplikasi ini digunakan untuk memprediksi cluster perusahaan asuransi,
-             kemudian melakukan regresi pendapatan rumah sakit dari perusahaan asuransi.
+             Petunjuk Penggunaan,
+             1. Sistem dimulai dengan melakukan upload data
+             2. Cluster terbagi 2 bagian untuk ANALISIS dan PEMODELAN
+             - Analisis untuk menampilkan grafik pendapatan /tahun
+             - Pemodelan untuk menerapkan model K-Means Scikit-Learn
+             3. Timeseries untuk penerapan model REGRESI LINEAR
+             4. Hasil Prediksi /Payer dan Nama Payer diambil dari bagian Analisis Timeseries
+             5. Pastikan analisis dan pemodelan dalam keadaan default sebelum melihat hasil prediksi
              """)
     
     # Session handling
@@ -123,9 +129,7 @@ def main():
     if menu == "Abstrak" and menu1 == "Default" and menu2 == "Default":
         st.subheader("ABSTRAK")
         st.write("""
-                abstrak isi abstrak isi abstrak isi abstrak isi abstrak isi
-                 abstrak isi abstrak isi abstrak isi abstrak isi abstrak isi 
-                 abstrak isi abstrak isi abstrak isi abstrak isi abstrak isi
+                Prototipe Prediksi Pendapatan RS Berdasarkan Klasifikasi Payer Asuransi
                  """)
     
     # Riwayat Pembuat
